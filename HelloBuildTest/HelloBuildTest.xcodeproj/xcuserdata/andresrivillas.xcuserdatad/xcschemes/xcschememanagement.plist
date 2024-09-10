@@ -6,8 +6,28 @@
 	<dict>
 		<key>HelloBuildTest.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>DC1085DB2C90BBCB0082AD7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC1085EB2C90BBCC0082AD7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC1085F52C90BBCC0082AD7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
