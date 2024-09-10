@@ -17,6 +17,9 @@
 		DC10860E2C90C5690082AD7C /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC10860D2C90C5690082AD7C /* UserItem.swift */; };
 		DC1086102C90C5930082AD7C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC10860F2C90C5930082AD7C /* User.swift */; };
 		DC1086132C90C8030082AD7C /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1086122C90C8030082AD7C /* ProfileImage.swift */; };
+		DC19CBA92C9100390038BF09 /* OpenExternalUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC19CBA82C9100390038BF09 /* OpenExternalUtil.swift */; };
+		DC19CBAB2C91020A0038BF09 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC19CBAA2C91020A0038BF09 /* UserDetail.swift */; };
+		DC19CBAD2C9108350038BF09 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC19CBAC2C9108350038BF09 /* DateUtil.swift */; };
 		DCA8B2862C90CEA3008D2A6D /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2852C90CEA3008D2A6D /* UserListViewModel.swift */; };
 		DCA8B2882C90CEFA008D2A6D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2872C90CEFA008D2A6D /* NetworkManager.swift */; };
 		DCA8B28A2C90E409008D2A6D /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2892C90E409008D2A6D /* SortOption.swift */; };
@@ -51,6 +54,9 @@
 		DC10860D2C90C5690082AD7C /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
 		DC10860F2C90C5930082AD7C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DC1086122C90C8030082AD7C /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
+		DC19CBA82C9100390038BF09 /* OpenExternalUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenExternalUtil.swift; sourceTree = "<group>"; };
+		DC19CBAA2C91020A0038BF09 /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
+		DC19CBAC2C9108350038BF09 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		DCA8B2852C90CEA3008D2A6D /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		DCA8B2872C90CEFA008D2A6D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DCA8B2892C90E409008D2A6D /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 		DC1085DE2C90BBCB0082AD7C /* HelloBuildTest */ = {
 			isa = PBXGroup;
 			children = (
+				DC19CBA62C9100290038BF09 /* Util */,
 				DCA8B2912C90E868008D2A6D /* NetworkManager */,
 				DC10860A2C90C5050082AD7C /* View */,
 				DC1086092C90C4FA0082AD7C /* Model */,
@@ -152,6 +159,7 @@
 				DC1086112C90C7F30082AD7C /* Custom views */,
 				DC1085E12C90BBCB0082AD7C /* UserList.swift */,
 				DCA8B2852C90CEA3008D2A6D /* UserListViewModel.swift */,
+				DC19CBAA2C91020A0038BF09 /* UserDetail.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +171,15 @@
 				DC1086122C90C8030082AD7C /* ProfileImage.swift */,
 			);
 			path = "Custom views";
+			sourceTree = "<group>";
+		};
+		DC19CBA62C9100290038BF09 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				DC19CBA82C9100390038BF09 /* OpenExternalUtil.swift */,
+				DC19CBAC2C9108350038BF09 /* DateUtil.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		DCA8B28D2C90E7FC008D2A6D /* UserList */ = {
@@ -303,13 +320,16 @@
 				DC1086102C90C5930082AD7C /* User.swift in Sources */,
 				DCA8B2932C90E879008D2A6D /* NetworkManagerProtocol.swift in Sources */,
 				DCA8B2862C90CEA3008D2A6D /* UserListViewModel.swift in Sources */,
+				DC19CBA92C9100390038BF09 /* OpenExternalUtil.swift in Sources */,
 				DC1085E22C90BBCB0082AD7C /* UserList.swift in Sources */,
 				DCA8B2882C90CEFA008D2A6D /* NetworkManager.swift in Sources */,
+				DC19CBAB2C91020A0038BF09 /* UserDetail.swift in Sources */,
 				DCA8B28A2C90E409008D2A6D /* SortOption.swift in Sources */,
 				DCA8B2982C90EBB5008D2A6D /* HBError.swift in Sources */,
 				DC1085E02C90BBCB0082AD7C /* HelloBuildTestApp.swift in Sources */,
 				DC1086132C90C8030082AD7C /* ProfileImage.swift in Sources */,
 				DC10860E2C90C5690082AD7C /* UserItem.swift in Sources */,
+				DC19CBAD2C9108350038BF09 /* DateUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,9 @@ class UserTests: XCTestCase {
             age: 30,
             email: "john.doe@example.com",
             image: "https://example.com/image.jpg",
-            phone: "+1234567890"
+            phone: "+1234567890",
+            birthDate: "1997-11-10",
+            university: "Test"
         )
         
         XCTAssertEqual(user.id, 1)
@@ -38,7 +40,9 @@ class UserTests: XCTestCase {
             age: 30,
             email: "john.doe@example.com",
             image: "https://example.com/image.jpg",
-            phone: "+1234567890"
+            phone: "+1234567890",
+            birthDate: "1997-11-10",
+            university: "Test"
         )
         XCTAssertEqual(user.fullName, "John Doe")
     }
@@ -51,7 +55,9 @@ class UserTests: XCTestCase {
             age: 30,
             email: "john.doe@example.com",
             image: "https://example.com/image.jpg",
-            phone: "+1234567890"
+            phone: "+1234567890",
+            birthDate: "1997-11-10",
+            university: "Test"
         )
         
         let encoder = JSONEncoder()
@@ -84,7 +90,9 @@ class UserTests: XCTestCase {
                         "age": 28,
                         "email": "emily.johnson@x.dummyjson.com",
                         "image": "https://dummyjson.com/icon/emilys/128",
-                        "phone": "+81 965-431-3024"
+                        "phone": "+81 965-431-3024",
+                        "birthDate": "1996-5-30",
+                        "university": "University of Wisconsin--Madison",
                     }
                 ]
             }
@@ -105,6 +113,8 @@ class UserTests: XCTestCase {
             XCTAssertEqual(firstUser.email, "emily.johnson@x.dummyjson.com")
             XCTAssertEqual(firstUser.image, "https://dummyjson.com/icon/emilys/128")
             XCTAssertEqual(firstUser.phone, "+81 965-431-3024")
+            XCTAssertEqual(firstUser.birthDate, "1996-5-30")
+            XCTAssertEqual(firstUser.university, "University of Wisconsin--Madison")
             
         } catch {
             XCTFail("Decoding failed: \(error)")

@@ -14,8 +14,7 @@ struct ProfileImage: View {
     
     var body: some View {
         let defaultImage = Image(systemName: "person.crop.circle")
-            .frame(width: 100, height: 100)
-            .scaledToFit()
+            .resizable()
             .foregroundColor(Color(UIColor.systemGray))
         
         AsyncImage(url: URL(string: imageUrl)) { phase in
@@ -24,11 +23,11 @@ struct ProfileImage: View {
                 ProgressView()
             case .success(let image):
                 image
-                    .frame(width: 100, height: 100)
+                    .resizable()
                     .scaledToFit()
-                    .clipShape(Circle()) // Make the image circular
+                    .clipShape(Circle())
                     .overlay(
-                        Circle().stroke(Color(UIColor.systemGray2), lineWidth: 5) // Add a circular border
+                        Circle().stroke(Color(UIColor.systemGray2), lineWidth: 5)
                     )
 
             case .failure:

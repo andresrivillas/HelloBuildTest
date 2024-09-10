@@ -9,10 +9,10 @@ import SwiftUI
 
 struct UserList: View {
     @StateObject private var viewModel: UserListViewModel
-        
-        init() {
-            _viewModel = StateObject(wrappedValue: UserListViewModel(networkManager: NetworkManager()))
-        }
+    
+    init() {
+        _viewModel = StateObject(wrappedValue: UserListViewModel(networkManager: NetworkManager()))
+    }
     
     var body: some View {
         NavigationStack {
@@ -21,6 +21,9 @@ struct UserList: View {
                     ForEach (viewModel.sortedUserList.indices, id: \.self) { index in
                         ZStack {
                             UserItem(user: viewModel.sortedUserList[index])
+                                .onTapGesture {
+                                    viewModel.selectedUser = viewModel.sortedUserList[index]
+                                }
                             
                             if index == (viewModel.userList.count - 2) && !viewModel.isLoading && !viewModel.limitReached {
                                 Color.clear
@@ -50,6 +53,13 @@ struct UserList: View {
                 } label: {
                     Label("Sort", systemImage: "arrow.up.arrow.down")
                 }
+            }
+            .alert(viewModel.errorMessage, isPresented: $viewModel.shouldShowError) {
+                Button("OK", role: .cancel) { }
+            }
+            .sheet(item: $viewModel.selectedUser){ user in
+                UserDetail(user: user)
+                    .presentationDetents([.fraction(0.5)])
             }
         }
     }

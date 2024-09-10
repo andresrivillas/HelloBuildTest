@@ -13,6 +13,9 @@ class UserListViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var limitReached: Bool = false
     @Published var sortOrder: SortOption = .id
+    @Published var shouldShowError: Bool = false
+    @Published var errorMessage: String = ""
+    @Published var selectedUser: User? 
     var page: Int = 0
     
     private let networkManager: NetworkManagerProtocol
@@ -51,6 +54,8 @@ class UserListViewModel: ObservableObject {
                     self.userList.append(contentsOf: users)
                     self.page += 4
                 case .failure(let error):
+                    self.errorMessage = error.rawValue
+                    self.shouldShowError = true
                     self.isLoading = false
                 }
             }
