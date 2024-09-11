@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DC033F9F2C90F0F300A240D0 /* UsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC033F9E2C90F0F300A240D0 /* UsersResponse.swift */; };
-		DC033FA02C90F0FD00A240D0 /* UsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC033F9E2C90F0F300A240D0 /* UsersResponse.swift */; };
-		DC033FA12C90F18C00A240D0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2872C90CEFA008D2A6D /* NetworkManager.swift */; };
 		DC1085E02C90BBCB0082AD7C /* HelloBuildTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1085DF2C90BBCB0082AD7C /* HelloBuildTestApp.swift */; };
 		DC1085E22C90BBCB0082AD7C /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1085E12C90BBCB0082AD7C /* UserList.swift */; };
 		DC1085E42C90BBCC0082AD7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC1085E32C90BBCC0082AD7C /* Assets.xcassets */; };
@@ -20,14 +18,12 @@
 		DC19CBA92C9100390038BF09 /* OpenExternalUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC19CBA82C9100390038BF09 /* OpenExternalUtil.swift */; };
 		DC19CBAB2C91020A0038BF09 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC19CBAA2C91020A0038BF09 /* UserDetail.swift */; };
 		DC19CBAD2C9108350038BF09 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC19CBAC2C9108350038BF09 /* DateUtil.swift */; };
+		DC5D1B562C911E5700BB0034 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B28F2C90E80C008D2A6D /* MockNetworkManager.swift */; };
 		DCA8B2862C90CEA3008D2A6D /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2852C90CEA3008D2A6D /* UserListViewModel.swift */; };
 		DCA8B2882C90CEFA008D2A6D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2872C90CEFA008D2A6D /* NetworkManager.swift */; };
 		DCA8B28A2C90E409008D2A6D /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2892C90E409008D2A6D /* SortOption.swift */; };
 		DCA8B28C2C90E651008D2A6D /* UserListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B28B2C90E651008D2A6D /* UserListViewModelTest.swift */; };
-		DCA8B2902C90E80C008D2A6D /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B28F2C90E80C008D2A6D /* MockNetworkManager.swift */; };
 		DCA8B2932C90E879008D2A6D /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2922C90E879008D2A6D /* NetworkManagerProtocol.swift */; };
-		DCA8B2942C90E8AB008D2A6D /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2922C90E879008D2A6D /* NetworkManagerProtocol.swift */; };
-		DCA8B2952C90E8BA008D2A6D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC10860F2C90C5930082AD7C /* User.swift */; };
 		DCA8B2982C90EBB5008D2A6D /* HBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2972C90EBB5008D2A6D /* HBError.swift */; };
 		DCA8B2992C90EBC1008D2A6D /* HBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2972C90EBB5008D2A6D /* HBError.swift */; };
 		DCA8B29F2C90EFF6008D2A6D /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B29E2C90EFF6008D2A6D /* UserTest.swift */; };
@@ -325,6 +321,7 @@
 				DCA8B2882C90CEFA008D2A6D /* NetworkManager.swift in Sources */,
 				DC19CBAB2C91020A0038BF09 /* UserDetail.swift in Sources */,
 				DCA8B28A2C90E409008D2A6D /* SortOption.swift in Sources */,
+				DC5D1B562C911E5700BB0034 /* MockNetworkManager.swift in Sources */,
 				DCA8B2982C90EBB5008D2A6D /* HBError.swift in Sources */,
 				DC1085E02C90BBCB0082AD7C /* HelloBuildTestApp.swift in Sources */,
 				DC1086132C90C8030082AD7C /* ProfileImage.swift in Sources */,
@@ -337,13 +334,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCA8B2952C90E8BA008D2A6D /* User.swift in Sources */,
 				DCA8B2992C90EBC1008D2A6D /* HBError.swift in Sources */,
-				DCA8B2902C90E80C008D2A6D /* MockNetworkManager.swift in Sources */,
-				DCA8B2942C90E8AB008D2A6D /* NetworkManagerProtocol.swift in Sources */,
-				DC033FA12C90F18C00A240D0 /* NetworkManager.swift in Sources */,
 				DCA8B29F2C90EFF6008D2A6D /* UserTest.swift in Sources */,
-				DC033FA02C90F0FD00A240D0 /* UsersResponse.swift in Sources */,
 				DCA8B28C2C90E651008D2A6D /* UserListViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
