@@ -175,39 +175,58 @@ class UserListViewModelTests: XCTestCase {
     }
     
     func testFetchAdditionalPages() {
-        let mockUsersPage1 = [
+        viewModel.userList = [
             User(id: 1, firstName: "John", lastName: "Doe", age: 25, email: "john.doe@example.com", image: "", phone: "1234567890", birthDate: "", university: ""),
-            User(id: 2, firstName: "Jane", lastName: "Doe", age: 25, email: "jane.doe@example.com", image: "", phone: "0987654321", birthDate: "", university: "")
+            User(id: 2, firstName: "Jane", lastName: "Doe", age: 25, email: "jane.doe@example.com", image: "", phone: "0987654321", birthDate: "", university: ""),
         ]
         let mockUsersPage2 = [
             User(id: 3, firstName: "Alice", lastName: "Smith", age: 30, email: "alice.smith@example.com", image: "", phone: "1234567890", birthDate: "", university: ""),
             User(id: 4, firstName: "Bob", lastName: "Johnson", age: 35, email: "bob.johnson@example.com", image: "", phone: "0987654321", birthDate: "", university: "")
         ]
+    
         
-        mockNetworkManager.mockUsers = mockUsersPage1
-        mockNetworkManager.shouldFail = false
-        
-        let exp1 = expectation(description: "Load page 1")
-        let exp2 = expectation(description: "Load page 2")
+        let exp1 = expectation(description: "Load page 2")
         
         viewModel.$userList
             .sink {
-                if $0.count == 2 {
+                if $0.count == 4 {
                     exp1.fulfill()
-                } else if $0.count == 4 {
-                    exp2.fulfill()
+                }
+            }
+            .store(in: &cancellables)
+        
+        
+        mockNetworkManager.mockUsers = mockUsersPage2
+        viewModel.fetchUsers()
+        
+        wait(for: [exp1], timeout: 2)
+        XCTAssertEqual(viewModel.userList.count, 4)
+        XCTAssertEqual(viewModel.page, 8)
+    }
+    
+    func testSearchQueryFiltering() {
+        let mockUsers = [
+            User(id: 1, firstName: "Alice", lastName: "Doe", age: 25, email: "alice.doe@example.com", image: "", phone: "1234567890", birthDate: "", university: ""),
+            User(id: 2, firstName: "Bob", lastName: "Smith", age: 25, email: "bob.smith@example.com", image: "", phone: "0987654321", birthDate: "", university: "")
+        ]
+        mockNetworkManager.mockUsers = mockUsers
+        mockNetworkManager.shouldFail = false
+        
+        let exp = expectation(description: "Search users by query")
+        
+        viewModel.$userList
+            .sink {
+                if !$0.isEmpty {
+                    exp.fulfill()
                 }
             }
             .store(in: &cancellables)
         
         viewModel.fetchUsers()
-        wait(for: [exp1], timeout: 2)
-        XCTAssertEqual(viewModel.userList.count, 2)
+        wait(for: [exp], timeout: 2)
         
-        mockNetworkManager.mockUsers = mockUsersPage2
-        viewModel.fetchUsers()
-        wait(for: [exp2], timeout: 2)
-        XCTAssertEqual(viewModel.userList.count, 4)
-        XCTAssertEqual(viewModel.page, 12)
+        viewModel.searchQuery = "Alice"
+        XCTAssertEqual(viewModel.filteredUserList.count, 1)
+        XCTAssertEqual(viewModel.filteredUserList.first?.firstName, "Alice")
     }
 }

@@ -16,6 +16,7 @@ class UserListViewModel: ObservableObject {
     @Published var errorMessage: String = ""
     @Published var selectedUser: User?
     @Published var limitReached: Bool = false
+    @Published var searchQuery: String = ""
     var page: Int = 0
     
     
@@ -24,6 +25,14 @@ class UserListViewModel: ObservableObject {
     init(networkManager: NetworkManagerProtocol) {
         self.networkManager = networkManager
         fetchUsers()
+    }
+    
+    var filteredUserList: [User] {
+        if searchQuery.isEmpty {
+            return sortedUserList
+        } else {
+            return sortedUserList.filter { $0.fullName.lowercased().contains(searchQuery.lowercased()) }
+        }
     }
     
     var sortedUserList: [User] {
@@ -42,6 +51,9 @@ class UserListViewModel: ObservableObject {
     }
     
     func fetchUsers() {
+        if isLoading || limitReached || !searchQuery.isEmpty {
+            return
+        }
         isLoading = !userList.isEmpty
         networkManager.getUserList(page: page) { [weak self] result in
             guard let self = self else { return }

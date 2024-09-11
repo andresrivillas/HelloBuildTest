@@ -18,42 +18,40 @@ struct UserList: View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
-                    ForEach (viewModel.sortedUserList.indices, id: \.self) { index in
+                    ForEach (viewModel.filteredUserList, id: \.id) { user in
                         ZStack {
-                            UserItem(user: viewModel.sortedUserList[index])
+                            UserItem(user: user)
                                 .onTapGesture {
-                                    viewModel.selectedUser = viewModel.sortedUserList[index]
+                                    viewModel.selectedUser = user
                                 }
-                            
-                            if index == (viewModel.userList.count - 2) && !viewModel.isLoading && !viewModel.limitReached {
-                                Color.clear
-                                    .onAppear {
+                                .onAppear {
+                                    if user == viewModel.filteredUserList.last {
                                         viewModel.fetchUsers()
                                     }
-                                    .frame(width: CGFloat.leastNonzeroMagnitude)
-                                    .listStyle(.grouped)
-                            }
+                                }
                         }
-                    }
-                    if viewModel.isLoading{
-                        SkeletonLoader()
                     }
                 }
                 .frame(alignment: .leading)
                 .padding(.horizontal)
             }
             .background(Color(UIColor.systemBackground))
+            .navigationTitle("Users")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                Menu {
-                    Picker("Sort by", selection: $viewModel.sortOrder) {
-                        ForEach(SortOption.allCases, id: \.self) { option in
-                            Text(option.rawValue).tag(option)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Menu {
+                        Picker("Sort by", selection: $viewModel.sortOrder) {
+                            ForEach(SortOption.allCases, id: \.self) { option in
+                                Text(option.rawValue).tag(option)
+                            }
                         }
+                    } label: {
+                        Label("Sort", systemImage: "arrow.up.arrow.down")
                     }
-                } label: {
-                    Label("Sort", systemImage: "arrow.up.arrow.down")
                 }
             }
+            .searchable(text: $viewModel.searchQuery, placement: .navigationBarDrawer(displayMode: .always))
             .alert(viewModel.errorMessage, isPresented: $viewModel.shouldShowError) {
                 Button("OK", role: .cancel) { }
             }
@@ -61,32 +59,8 @@ struct UserList: View {
                 UserDetail(user: user)
                     .presentationDetents([.fraction(0.5)])
             }
+            
         }
-    }
-}
-
-private struct SkeletonLoader: View {
-    var body: some View {
-        ForEach(0..<4, id: \.self) { _ in
-            Color(UIColor.secondarySystemBackground)
-                .frame(width: 360, height: 140)
-                .cornerRadius(10)
-                .modifier(PulseAnimation())
-        }
-    }
-}
-
-struct PulseAnimation: ViewModifier {
-    @State private var isVisible = false
-    
-    func body(content: Content) -> some View {
-        content
-            .opacity(isVisible ? 1 : 0.4)
-            .onAppear {
-                withAnimation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
-                    isVisible = true
-                }
-            }
     }
 }
 
