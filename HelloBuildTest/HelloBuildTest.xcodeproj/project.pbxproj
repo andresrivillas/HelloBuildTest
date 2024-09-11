@@ -27,6 +27,7 @@
 		DCA8B2982C90EBB5008D2A6D /* HBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2972C90EBB5008D2A6D /* HBError.swift */; };
 		DCA8B2992C90EBC1008D2A6D /* HBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2972C90EBB5008D2A6D /* HBError.swift */; };
 		DCA8B29F2C90EFF6008D2A6D /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B29E2C90EFF6008D2A6D /* UserTest.swift */; };
+		DCD7F2722C91D1E300065FF3 /* InfoUserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7F2712C91D1E300065FF3 /* InfoUserItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		DCA8B2922C90E879008D2A6D /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
 		DCA8B2972C90EBB5008D2A6D /* HBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBError.swift; sourceTree = "<group>"; };
 		DCA8B29E2C90EFF6008D2A6D /* UserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
+		DCD7F2712C91D1E300065FF3 /* InfoUserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoUserItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +119,6 @@
 				DC1085DF2C90BBCB0082AD7C /* HelloBuildTestApp.swift */,
 				DC1085E32C90BBCC0082AD7C /* Assets.xcassets */,
 				DC1085E52C90BBCC0082AD7C /* Preview Content */,
-				DCA8B2892C90E409008D2A6D /* SortOption.swift */,
 			);
 			path = HelloBuildTest;
 			sourceTree = "<group>";
@@ -165,6 +166,7 @@
 			children = (
 				DC10860D2C90C5690082AD7C /* UserItem.swift */,
 				DC1086122C90C8030082AD7C /* ProfileImage.swift */,
+				DCD7F2712C91D1E300065FF3 /* InfoUserItem.swift */,
 			);
 			path = "Custom views";
 			sourceTree = "<group>";
@@ -172,6 +174,7 @@
 		DC19CBA62C9100290038BF09 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				DCA8B2892C90E409008D2A6D /* SortOption.swift */,
 				DC19CBA82C9100390038BF09 /* OpenExternalUtil.swift */,
 				DC19CBAC2C9108350038BF09 /* DateUtil.swift */,
 			);
@@ -319,6 +322,7 @@
 				DC19CBA92C9100390038BF09 /* OpenExternalUtil.swift in Sources */,
 				DC1085E22C90BBCB0082AD7C /* UserList.swift in Sources */,
 				DCA8B2882C90CEFA008D2A6D /* NetworkManager.swift in Sources */,
+				DCD7F2722C91D1E300065FF3 /* InfoUserItem.swift in Sources */,
 				DC19CBAB2C91020A0038BF09 /* UserDetail.swift in Sources */,
 				DCA8B28A2C90E409008D2A6D /* SortOption.swift in Sources */,
 				DC5D1B562C911E5700BB0034 /* MockNetworkManager.swift in Sources */,

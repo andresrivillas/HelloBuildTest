@@ -11,12 +11,13 @@ class UserListViewModel: ObservableObject {
     
     @Published var userList: [User] = []
     @Published var isLoading: Bool = false
-    @Published var limitReached: Bool = false
     @Published var sortOrder: SortOption = .id
     @Published var shouldShowError: Bool = false
     @Published var errorMessage: String = ""
-    @Published var selectedUser: User? 
+    @Published var selectedUser: User?
+    @Published var limitReached: Bool = false
     var page: Int = 0
+    
     
     private let networkManager: NetworkManagerProtocol
     
@@ -47,12 +48,12 @@ class UserListViewModel: ObservableObject {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let users):
-                    if users.count < 4 {
-                        self.limitReached = true
-                    }
                     self.isLoading = false
                     self.userList.append(contentsOf: users)
                     self.page += 4
+                    if users.count < 4 {
+                        self.limitReached = true
+                    }
                 case .failure(let error):
                     self.errorMessage = error.rawValue
                     self.shouldShowError = true
