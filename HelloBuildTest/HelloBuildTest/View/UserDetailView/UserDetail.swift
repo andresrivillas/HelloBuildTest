@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserDetail: View {
+struct UserDetailView: View {
     var user: User
     @Environment(\.dismiss) var dismiss
     
@@ -26,5 +26,5 @@ struct UserDetail: View {
 }
 
 #Preview {
-    UserDetail(user: User.example)
+    UserDetailView(user: User.example)
 }

@@ -24,7 +24,6 @@ class UserListViewModel: ObservableObject {
     
     init(networkManager: NetworkManagerProtocol) {
         self.networkManager = networkManager
-        fetchUsers()
     }
     
     var filteredUserList: [User] {
@@ -60,6 +59,7 @@ class UserListViewModel: ObservableObject {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let users):
+                    
                     self.isLoading = false
                     self.userList.append(contentsOf: users)
                     self.page += 4
@@ -67,6 +67,7 @@ class UserListViewModel: ObservableObject {
                         self.limitReached = true
                     }
                 case .failure(let error):
+                    
                     self.errorMessage = error.rawValue
                     self.shouldShowError = true
                     self.isLoading = false

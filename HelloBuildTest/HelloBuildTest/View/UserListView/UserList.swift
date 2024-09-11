@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserList: View {
+struct UserListView: View {
     @StateObject private var viewModel: UserListViewModel
     
     init() {
@@ -35,6 +35,9 @@ struct UserList: View {
                 .frame(alignment: .leading)
                 .padding(.horizontal)
             }
+            .onAppear {
+                viewModel.fetchUsers()
+            }
             .background(Color(UIColor.systemBackground))
             .navigationTitle("Users")
             .navigationBarTitleDisplayMode(.inline)
@@ -56,7 +59,7 @@ struct UserList: View {
                 Button("OK", role: .cancel) { }
             }
             .sheet(item: $viewModel.selectedUser){ user in
-                UserDetail(user: user)
+                UserDetailView(user: user)
                     .presentationDetents([.fraction(0.5)])
             }
             
@@ -65,5 +68,5 @@ struct UserList: View {
 }
 
 #Preview {
-    UserList()
+    UserListView()
 }

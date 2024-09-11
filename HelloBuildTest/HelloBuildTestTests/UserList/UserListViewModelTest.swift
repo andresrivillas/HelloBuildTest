@@ -179,6 +179,7 @@ class UserListViewModelTests: XCTestCase {
             User(id: 1, firstName: "John", lastName: "Doe", age: 25, email: "john.doe@example.com", image: "", phone: "1234567890", birthDate: "", university: ""),
             User(id: 2, firstName: "Jane", lastName: "Doe", age: 25, email: "jane.doe@example.com", image: "", phone: "0987654321", birthDate: "", university: ""),
         ]
+        viewModel.page = 4
         let mockUsersPage2 = [
             User(id: 3, firstName: "Alice", lastName: "Smith", age: 30, email: "alice.smith@example.com", image: "", phone: "1234567890", birthDate: "", university: ""),
             User(id: 4, firstName: "Bob", lastName: "Johnson", age: 35, email: "bob.johnson@example.com", image: "", phone: "0987654321", birthDate: "", university: "")

@@ -18,7 +18,7 @@
 		DC19CBA92C9100390038BF09 /* OpenExternalUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC19CBA82C9100390038BF09 /* OpenExternalUtil.swift */; };
 		DC19CBAB2C91020A0038BF09 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC19CBAA2C91020A0038BF09 /* UserDetail.swift */; };
 		DC19CBAD2C9108350038BF09 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC19CBAC2C9108350038BF09 /* DateUtil.swift */; };
-		DC5D1B562C911E5700BB0034 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B28F2C90E80C008D2A6D /* MockNetworkManager.swift */; };
+		DC55BE022C922652002A5664 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B28F2C90E80C008D2A6D /* MockNetworkManager.swift */; };
 		DCA8B2862C90CEA3008D2A6D /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2852C90CEA3008D2A6D /* UserListViewModel.swift */; };
 		DCA8B2882C90CEFA008D2A6D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2872C90CEFA008D2A6D /* NetworkManager.swift */; };
 		DCA8B28A2C90E409008D2A6D /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8B2892C90E409008D2A6D /* SortOption.swift */; };
@@ -112,13 +112,13 @@
 		DC1085DE2C90BBCB0082AD7C /* HelloBuildTest */ = {
 			isa = PBXGroup;
 			children = (
-				DC19CBA62C9100290038BF09 /* Util */,
-				DCA8B2912C90E868008D2A6D /* NetworkManager */,
-				DC10860A2C90C5050082AD7C /* View */,
-				DC1086092C90C4FA0082AD7C /* Model */,
-				DC1085DF2C90BBCB0082AD7C /* HelloBuildTestApp.swift */,
 				DC1085E32C90BBCC0082AD7C /* Assets.xcassets */,
+				DC1085DF2C90BBCB0082AD7C /* HelloBuildTestApp.swift */,
+				DC1086092C90C4FA0082AD7C /* Model */,
+				DCA8B2912C90E868008D2A6D /* NetworkManager */,
 				DC1085E52C90BBCC0082AD7C /* Preview Content */,
+				DC19CBA62C9100290038BF09 /* Util */,
+				DC10860A2C90C5050082AD7C /* View */,
 			);
 			path = HelloBuildTest;
 			sourceTree = "<group>";
@@ -134,9 +134,9 @@
 		DC1085EF2C90BBCC0082AD7C /* HelloBuildTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				DCA8B29D2C90EFE4008D2A6D /* UserTest */,
 				DCA8B28E2C90E803008D2A6D /* Mock */,
 				DCA8B28D2C90E7FC008D2A6D /* UserList */,
+				DCA8B29D2C90EFE4008D2A6D /* UserTest */,
 			);
 			path = HelloBuildTestTests;
 			sourceTree = "<group>";
@@ -153,32 +153,48 @@
 		DC10860A2C90C5050082AD7C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DC1086112C90C7F30082AD7C /* Custom views */,
-				DC1085E12C90BBCB0082AD7C /* UserList.swift */,
-				DCA8B2852C90CEA3008D2A6D /* UserListViewModel.swift */,
-				DC19CBAA2C91020A0038BF09 /* UserDetail.swift */,
+				DC55BE062C92272D002A5664 /* CommonView */,
+				DC55BE052C922708002A5664 /* UserDetailView */,
+				DC55BE032C9226F4002A5664 /* UserListView */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		DC1086112C90C7F30082AD7C /* Custom views */ = {
-			isa = PBXGroup;
-			children = (
-				DC10860D2C90C5690082AD7C /* UserItem.swift */,
-				DC1086122C90C8030082AD7C /* ProfileImage.swift */,
-				DCD7F2712C91D1E300065FF3 /* InfoUserItem.swift */,
-			);
-			path = "Custom views";
 			sourceTree = "<group>";
 		};
 		DC19CBA62C9100290038BF09 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				DCA8B2892C90E409008D2A6D /* SortOption.swift */,
-				DC19CBA82C9100390038BF09 /* OpenExternalUtil.swift */,
 				DC19CBAC2C9108350038BF09 /* DateUtil.swift */,
+				DC19CBA82C9100390038BF09 /* OpenExternalUtil.swift */,
+				DCA8B2892C90E409008D2A6D /* SortOption.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		DC55BE032C9226F4002A5664 /* UserListView */ = {
+			isa = PBXGroup;
+			children = (
+				DC1085E12C90BBCB0082AD7C /* UserList.swift */,
+				DCA8B2852C90CEA3008D2A6D /* UserListViewModel.swift */,
+			);
+			path = UserListView;
+			sourceTree = "<group>";
+		};
+		DC55BE052C922708002A5664 /* UserDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				DC19CBAA2C91020A0038BF09 /* UserDetail.swift */,
+			);
+			path = UserDetailView;
+			sourceTree = "<group>";
+		};
+		DC55BE062C92272D002A5664 /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+				DCD7F2712C91D1E300065FF3 /* InfoUserItem.swift */,
+				DC1086122C90C8030082AD7C /* ProfileImage.swift */,
+				DC10860D2C90C5690082AD7C /* UserItem.swift */,
+			);
+			path = CommonView;
 			sourceTree = "<group>";
 		};
 		DCA8B28D2C90E7FC008D2A6D /* UserList */ = {
@@ -200,9 +216,9 @@
 		DCA8B2912C90E868008D2A6D /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				DCA8B2972C90EBB5008D2A6D /* HBError.swift */,
 				DCA8B2872C90CEFA008D2A6D /* NetworkManager.swift */,
 				DCA8B2922C90E879008D2A6D /* NetworkManagerProtocol.swift */,
-				DCA8B2972C90EBB5008D2A6D /* HBError.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -317,6 +333,7 @@
 			files = (
 				DC033F9F2C90F0F300A240D0 /* UsersResponse.swift in Sources */,
 				DC1086102C90C5930082AD7C /* User.swift in Sources */,
+				DC55BE022C922652002A5664 /* MockNetworkManager.swift in Sources */,
 				DCA8B2932C90E879008D2A6D /* NetworkManagerProtocol.swift in Sources */,
 				DCA8B2862C90CEA3008D2A6D /* UserListViewModel.swift in Sources */,
 				DC19CBA92C9100390038BF09 /* OpenExternalUtil.swift in Sources */,
@@ -325,7 +342,6 @@
 				DCD7F2722C91D1E300065FF3 /* InfoUserItem.swift in Sources */,
 				DC19CBAB2C91020A0038BF09 /* UserDetail.swift in Sources */,
 				DCA8B28A2C90E409008D2A6D /* SortOption.swift in Sources */,
-				DC5D1B562C911E5700BB0034 /* MockNetworkManager.swift in Sources */,
 				DCA8B2982C90EBB5008D2A6D /* HBError.swift in Sources */,
 				DC1085E02C90BBCB0082AD7C /* HelloBuildTestApp.swift in Sources */,
 				DC1086132C90C8030082AD7C /* ProfileImage.swift in Sources */,
