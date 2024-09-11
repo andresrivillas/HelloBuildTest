@@ -19,17 +19,15 @@ struct UserListView: View {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
                     ForEach (viewModel.filteredUserList, id: \.id) { user in
-                        ZStack {
-                            UserItem(user: user)
-                                .onTapGesture {
-                                    viewModel.selectedUser = user
+                        UserItem(user: user)
+                            .onTapGesture {
+                                viewModel.selectedUser = user
+                            }
+                            .onAppear {
+                                if user == viewModel.filteredUserList.last {
+                                    viewModel.fetchUsers()
                                 }
-                                .onAppear {
-                                    if user == viewModel.filteredUserList.last {
-                                        viewModel.fetchUsers()
-                                    }
-                                }
-                        }
+                            }
                     }
                 }
                 .frame(alignment: .leading)
